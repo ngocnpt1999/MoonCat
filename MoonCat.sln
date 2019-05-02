@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.156
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoonCat.Android", "MoonCat\MoonCat.Android\MoonCat.Android.csproj", "{A887552A-5872-4FC2-925F-F89FFBB0906F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoonCat", "MoonCat\MoonCat\MoonCat.csproj", "{208863B0-4580-4432-970E-CADCD7BEFE05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A887552A-5872-4FC2-925F-F89FFBB0906F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A887552A-5872-4FC2-925F-F89FFBB0906F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A887552A-5872-4FC2-925F-F89FFBB0906F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A887552A-5872-4FC2-925F-F89FFBB0906F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A887552A-5872-4FC2-925F-F89FFBB0906F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A887552A-5872-4FC2-925F-F89FFBB0906F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{208863B0-4580-4432-970E-CADCD7BEFE05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{208863B0-4580-4432-970E-CADCD7BEFE05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{208863B0-4580-4432-970E-CADCD7BEFE05}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{208863B0-4580-4432-970E-CADCD7BEFE05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{208863B0-4580-4432-970E-CADCD7BEFE05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{208863B0-4580-4432-970E-CADCD7BEFE05}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C20D98A7-38A0-4468-A0A9-687636E00B7C}
+	EndGlobalSection
+EndGlobal

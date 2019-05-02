@@ -1,0 +1,109 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceAssemblyReference>true</ProduceAssemblyReference>
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+    <StartupObject />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl" Version="1.6.258-beta" />
+    <PackageReference Include="Xamarin.Forms" Version="4.0.0.346134-pre9" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
+    <PackageReference Include="Xamarin.Forms.CarouselView" Version="2.3.0-pre2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="pageSeatMovieShowing.xaml.cs">
+      <DependentUpon>pageSeatMovieShowing.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="pageCinemaInfo.xaml.cs">
+      <DependentUpon>pageCinemaInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="pageAllCinema.xaml.cs">
+      <DependentUpon>pageAllCinema.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="pageBeginTime.xaml.cs">
+      <DependentUpon>pageBeginTime.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="pageChooseCinema.xaml.cs">
+      <DependentUpon>pageChooseCinema.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="pageMovieDetail.xaml.cs">
+      <DependentUpon>pageMovieDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="pageMovieComingSoon.xaml.cs">
+      <DependentUpon>pageMovieComingSoon.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="pageMovieShowing.xaml.cs">
+      <DependentUpon>pageMovieShowing.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="pageHomeTabbed.xaml.cs">
+      <DependentUpon>pageHomeTabbed.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="pageBookTicketFollowCinema.xaml.cs">
+      <DependentUpon>pageBookTicketFollowCinema.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="pageBookTicketFollowMovie.xaml.cs">
+      <DependentUpon>pageBookTicketFollowMovie.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="MasterMainMenuItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="pageMasterMain.xaml.cs">
+      <DependentUpon>pageMasterMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="pageTrailerWebView.xaml.cs">
+      <DependentUpon>pageTrailerWebView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="pageSeatMovieShowing.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="pageCinemaInfo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="pageAllCinema.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="pageBeginTime.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="pageChooseCinema.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="pageMovieDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="pageMovieComingSoon.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="pageMovieShowing.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="pageHomeTabbed.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="pageBookTicketFollowCinema.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="pageBookTicketFollowMovie.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="pageMasterMain.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="pageTrailerWebView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
