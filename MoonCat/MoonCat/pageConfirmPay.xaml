@@ -14,29 +14,34 @@
                     <Label Text="{Binding Name}"
                            TextColor="Purple"
                            FontAttributes="Bold"
-                           FontSize="Medium"/>
+                           FontSize="Large"/>
                     <Label Text="{Binding Producer, StringFormat='Nhà sản xuất: {0}'}"/>
                     <Label Text="{Binding Director, StringFormat='Đạo diễn: {0}'}"/>
                     <Label Text="{Binding Duration, StringFormat='Thời lượng: {0} phút'}"/>
                 </StackLayout>
             </StackLayout>
             <StackLayout x:Name="slCinemaInfo">
-                <Label Text="{Binding Name, StringFormat='Rạp: {0}'}"/>
+                <Label Text="{Binding Name, StringFormat='Rạp: {0}'}"
+                       FontSize="Medium"/>
             </StackLayout>
             <StackLayout x:Name="slTime">
-                <Label Text="{Binding Date, StringFormat='Thời gian: {0}'}"/>
-                <Label Text="{Binding Begin, StringFormat='Suất chiếu: {0}'}"/>
+                <Label Text="{Binding Date, StringFormat='Thời gian: {0}'}"
+                       FontSize="Medium"/>
+                <Label Text="{Binding Begin, StringFormat='Suất chiếu: {0}'}"
+                       FontSize="Medium"/>
             </StackLayout>
             <Label x:Name="lbSeat"
-                   Text="Hàng ghế: "/>
-            <Label Text="{Binding total, StringFormat='Tổng tiền: {0}'}"/>
+                   Text="Hàng ghế: "
+                   FontSize="Medium"/>
+            <Label x:Name="lbTotal"
+                   FontSize="Medium"/>
             <Grid HorizontalOptions="End"
                   VerticalOptions="EndAndExpand">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Button Text="Hủy"
                         Grid.Column="0"

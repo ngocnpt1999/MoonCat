@@ -23,10 +23,6 @@ namespace MoonCat
             InitializeComponent();
             this.chosenSeats = chosenSeats;
             load(id_movieShowing);
-            foreach(var it in chosenSeats)
-            {
-                lbSeat.Text = lbSeat.Text + it.Row + it.Number + " ";
-            }
         }
 
         private void load(int id_movieShowing)
@@ -41,10 +37,19 @@ namespace MoonCat
             var cinema = dbConnection.Query<Model.Cinema>("SELECT * FROM Cinema WHERE id = ?",
                                                         new object[1] { this.chosenTime.ID_Cinema });
             this.cinemaInfo = cinema[0];
-            total = this.chosenSeats.Count * this.chosenTime.Price;
+            this.total = this.chosenSeats.Count * this.chosenTime.Price;
+            //
+            //
             slMovieInfo.BindingContext = this.movieInfo;
             slCinemaInfo.BindingContext = this.cinemaInfo;
             slTime.BindingContext = this.chosenTime;
+            lbTotal.Text = String.Format("Thành tiền: {0:c}", this.total);
+            //
+            //
+            foreach (var it in chosenSeats)
+            {
+                lbSeat.Text = lbSeat.Text + it.Row + it.Number + " ";
+            }
         }
     }
 }

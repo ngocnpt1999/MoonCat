@@ -13,7 +13,7 @@
                     <Label Text="{Binding Name}"
                            TextColor="Purple"
                            FontAttributes="Bold"
-                           FontSize="Medium"/>
+                           FontSize="Large"/>
                     <Label Text="{Binding Producer, StringFormat='Nhà sản xuất: {0}'}"/>
                     <Label Text="{Binding Director, StringFormat='Đạo diễn: {0}'}"/>
                     <Label Text="{Binding Premiere, StringFormat='Ngày khởi chiếu: {0}'}"/>
