@@ -87,7 +87,7 @@ namespace MoonCat
             }
             else
             {
-
+                await Navigation.PushAsync(new ConfirmPayPage(this.id_movie_showing, chosenSeats));
             }
         }
     }

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MoonCat.ConfirmPayPage"
+             BindingContext="MoonCat.ConfirmPayPage">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <StackLayout x:Name="slMovieInfo"
+                         Orientation="Horizontal">
+                <Image Source="{Binding Image}"
+                       Aspect="Fill"
+                       HeightRequest="200"
+                       WidthRequest="150"/>
+                <StackLayout>
+                    <Label Text="{Binding Name}"
+                           TextColor="Purple"
+                           FontAttributes="Bold"
+                           FontSize="Medium"/>
+                    <Label Text="{Binding Producer, StringFormat='Nhà sản xuất: {0}'}"/>
+                    <Label Text="{Binding Director, StringFormat='Đạo diễn: {0}'}"/>
+                    <Label Text="{Binding Duration, StringFormat='Thời lượng: {0} phút'}"/>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout x:Name="slCinemaInfo">
+                <Label Text="{Binding Name, StringFormat='Rạp: {0}'}"/>
+            </StackLayout>
+            <StackLayout x:Name="slTime">
+                <Label Text="{Binding Date, StringFormat='Thời gian: {0}'}"/>
+                <Label Text="{Binding Begin, StringFormat='Suất chiếu: {0}'}"/>
+            </StackLayout>
+            <Label x:Name="lbSeat"
+                   Text="Hàng ghế: "/>
+            <Label Text="{Binding total, StringFormat='Tổng tiền: {0}'}"/>
+            <Grid HorizontalOptions="CenterAndExpand"
+                  VerticalOptions="End">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Button Text="Hủy"
+                        Grid.Column="0"
+                        Grid.Row="0"/>
+                <Button Text="Xác nhận"
+                        Grid.Column="1"
+                        Grid.Row="0"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
