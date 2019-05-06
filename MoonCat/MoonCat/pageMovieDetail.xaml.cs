@@ -23,8 +23,7 @@ namespace MoonCat
 
         private async void BtnBookTicket_Clicked(object sender, EventArgs e)
         {
-            int id_movie = chosenMovie.ID;
-            await Navigation.PushAsync(new ChooseCinemaPage(id_movie));
+            await Navigation.PushAsync(new ChooseCinemaPage(this.chosenMovie));
         }
 
         private async void WatchTrailer_Tapped(object sender, EventArgs e)

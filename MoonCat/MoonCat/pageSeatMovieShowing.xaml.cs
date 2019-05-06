@@ -13,20 +13,24 @@ namespace MoonCat
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class SeatMovieShowingPage : ContentPage
 	{
-        private int id_movie_showing;
+        private Model.Movie chosenMovie;
+        private Model.Cinema chosenCinema;
+        private Model.MovieShowing time;
         private Model.ListSeatMovieShowing listSeats;
         private List<Model.Seat> chosenSeats = new List<Model.Seat>();
 
-        public SeatMovieShowingPage(int id_movie_showing)
+        public SeatMovieShowingPage(Model.Movie movie, Model.Cinema cinema, Model.MovieShowing time)
 		{
             InitializeComponent();
             this.Appearing += SeatMovieShowingPage_Appearing;
-            this.id_movie_showing = id_movie_showing;
+            this.chosenMovie = movie;
+            this.chosenCinema = cinema;
+            this.time = time;
 		}
 
         private void loadSeats()
         {
-            listSeats = new Model.ListSeatMovieShowing(this.id_movie_showing);
+            listSeats = new Model.ListSeatMovieShowing(this.time.ID);
             int column = 0;
             int row = 0;
             foreach (var it in listSeats.Seats)
@@ -87,7 +91,8 @@ namespace MoonCat
             }
             else
             {
-                await Navigation.PushAsync(new ConfirmPayPage(this.id_movie_showing, chosenSeats));
+                await Navigation.PushAsync(new ConfirmPayPage(this.chosenMovie, this.chosenCinema,
+                                                              this.time, chosenSeats));
             }
         }
     }

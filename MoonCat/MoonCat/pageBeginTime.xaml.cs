@@ -12,16 +12,16 @@ namespace MoonCat
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BeginTimePage : ContentPage
     {
-        private int id_movie;
-        private int id_cinema;
+        private Model.Movie chosenMovie;
+        private Model.Cinema chosenCinema;
         private Model.ListBeginTimeMovieShowing listTime;
 
-        public BeginTimePage(int id_movie, int id_cinema)
+        public BeginTimePage(Model.Movie movie, Model.Cinema cinema)
         {
             InitializeComponent();
-            this.id_movie = id_movie;
-            this.id_cinema = id_cinema;
-            listTime = new Model.ListBeginTimeMovieShowing(this.id_movie, this.id_cinema);
+            this.chosenMovie = movie;
+            this.chosenCinema = cinema;
+            listTime = new Model.ListBeginTimeMovieShowing(this.chosenMovie.ID, this.chosenCinema.ID);
             lvTime.ItemsSource = listTime.BeginTime;
         }
 
@@ -33,12 +33,12 @@ namespace MoonCat
                 " WHERE id_movie = ? AND id_cinema = ? AND date = ? AND begin = ?",
                 new object[4]
                 {
-                    this.id_movie,
-                    this.id_cinema,
+                    this.chosenMovie.ID,
+                    this.chosenCinema.ID,
                     "27/04/2019",
                     vm.Time
                 });
-            await Navigation.PushAsync(new SeatMovieShowingPage(showing[0].ID));
+            await Navigation.PushAsync(new SeatMovieShowingPage(this.chosenMovie, this.chosenCinema, showing[0]));
             ((ListView)sender).SelectedItem = null;
         }
     }
