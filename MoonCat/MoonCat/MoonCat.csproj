@@ -54,9 +54,6 @@
     <Compile Update="pageBookTicketFollowCinema.xaml.cs">
       <DependentUpon>pageBookTicketFollowCinema.xaml</DependentUpon>
     </Compile>
-    <Compile Update="pageBookTicketFollowMovie.xaml.cs">
-      <DependentUpon>pageBookTicketFollowMovie.xaml</DependentUpon>
-    </Compile>
     <Compile Update="MasterMainMenuItem.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -100,9 +97,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="pageBookTicketFollowCinema.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="pageBookTicketFollowMovie.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="pageMasterMain.xaml">
