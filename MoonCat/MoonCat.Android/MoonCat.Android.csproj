@@ -72,6 +72,9 @@
     <PackageReference Include="Xamarin.Forms.CarouselView">
       <Version>2.3.0-pre2</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Forms.InputKit">
+      <Version>3.0.11</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseConnection_Android.cs" />

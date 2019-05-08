@@ -19,6 +19,8 @@ namespace MoonCat.Droid
 
             base.OnCreate(savedInstanceState);
 
+            Plugin.InputKit.Platforms.Droid.Config.Init(this, savedInstanceState);
+
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
