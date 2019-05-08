@@ -12,21 +12,22 @@ namespace MoonCat
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ChooseCinemaPage : ContentPage
     {
-        private Model.Movie chosenMovie;
+        private Model.BookingInfo booking;
         private Model.ListChooseCinema listChooseCinema;
 
-        public ChooseCinemaPage(Model.Movie movie)
+        public ChooseCinemaPage(Model.BookingInfo booking)
         {
             InitializeComponent();
-            this.chosenMovie = movie;
-            listChooseCinema = new Model.ListChooseCinema(this.chosenMovie.ID);
+            this.booking = booking;
+            listChooseCinema = new Model.ListChooseCinema(this.booking.MovieInfo.ID);
             lvChooseCinema.ItemsSource = listChooseCinema.Cinemas;
         }
 
         private async void LvChooseCinema_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             var vm = ((ListView)sender).SelectedItem as Model.Cinema;
-            await Navigation.PushAsync(new BeginTimePage(this.chosenMovie, vm));
+            this.booking.CinemaInfo = vm;
+            await Navigation.PushAsync(new BeginTimePage(this.booking));
             ((ListView)sender).SelectedItem = null;
         }
     }

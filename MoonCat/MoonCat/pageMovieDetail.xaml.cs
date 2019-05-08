@@ -16,14 +16,15 @@ namespace MoonCat
         public MovieDetailPage(Model.Movie movie, bool active)
         {
             InitializeComponent();
-            chosenMovie = movie;
+            this.chosenMovie = movie;
             BindingContext = chosenMovie;
             btnBookTicket.IsVisible = active;
         }
 
         private async void BtnBookTicket_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ChooseCinemaPage(this.chosenMovie));
+            Model.BookingInfo booking = new Model.BookingInfo() { MovieInfo = this.chosenMovie };
+            await Navigation.PushAsync(new ChooseCinemaPage(booking));
         }
 
         private async void WatchTrailer_Tapped(object sender, EventArgs e)

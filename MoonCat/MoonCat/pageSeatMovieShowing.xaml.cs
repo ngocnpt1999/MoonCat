@@ -13,24 +13,28 @@ namespace MoonCat
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class SeatMovieShowingPage : ContentPage
 	{
-        private Model.Movie chosenMovie;
-        private Model.Cinema chosenCinema;
-        private Model.MovieShowing time;
+        private Model.BookingInfo booking;
         private Model.ListSeatMovieShowing listSeats;
-        private List<Model.Seat> chosenSeats = new List<Model.Seat>();
+        private List<Model.Seat> chosenSeats;
+        private double count = 0;
 
-        public SeatMovieShowingPage(Model.Movie movie, Model.Cinema cinema, Model.MovieShowing time)
+        public SeatMovieShowingPage(Model.BookingInfo booking)
 		{
             InitializeComponent();
-            this.Appearing += SeatMovieShowingPage_Appearing;
-            this.chosenMovie = movie;
-            this.chosenCinema = cinema;
-            this.time = time;
+            this.booking = booking;
 		}
+
+        protected override void OnAppearing()
+        {
+            chosenSeats = new List<Model.Seat>();
+            loadSeats();
+            this.count = 0;
+            lbCount.Text = String.Format("{0:c}", this.count);
+        }
 
         private void loadSeats()
         {
-            listSeats = new Model.ListSeatMovieShowing(this.time.ID);
+            listSeats = new Model.ListSeatMovieShowing(this.booking.TimeInfo.ID);
             int column = 0;
             int row = 0;
             foreach (var it in listSeats.Seats)
@@ -63,12 +67,6 @@ namespace MoonCat
             }
         }
 
-        private void SeatMovieShowingPage_Appearing(object sender, EventArgs e)
-        {
-            chosenSeats = new List<Model.Seat>();
-            loadSeats();
-        }
-
         private void Button_Clicked(object sender, EventArgs e)
         {
             if((sender as Button).BackgroundColor == Color.Yellow)
@@ -81,6 +79,8 @@ namespace MoonCat
                 (sender as Button).BackgroundColor = Color.Yellow;
                 chosenSeats.Remove((((Button)sender).BindingContext) as Model.Seat);
             }
+            this.count = this.booking.TimeInfo.Price * chosenSeats.Count;
+            lbCount.Text = String.Format("{0:c}", this.count);
         }
 
         private async void BtnPay_Clicked(object sender, EventArgs e)
@@ -91,8 +91,9 @@ namespace MoonCat
             }
             else
             {
-                await Navigation.PushAsync(new ConfirmPayPage(this.chosenMovie, this.chosenCinema,
-                                                              this.time, chosenSeats));
+                this.booking.ChosenSeats = this.chosenSeats;
+                this.booking.TotalPrice = this.count;
+                await Navigation.PushAsync(new ConfirmPayPage(this.booking));
             }
         }
     }
