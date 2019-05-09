@@ -35,8 +35,7 @@
                    FontSize="Medium"/>
             <Label x:Name="lbTotal"
                    FontSize="Medium"/>
-            <Grid HorizontalOptions="End"
-                  VerticalOptions="EndAndExpand">
+            <Grid VerticalOptions="EndAndExpand">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>

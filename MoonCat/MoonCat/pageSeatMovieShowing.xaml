@@ -29,9 +29,9 @@
                 </Grid>
             </ScrollView>
             <StackLayout Orientation="Horizontal"
-                         BackgroundColor="#249ACF"
+                         BackgroundColor="#7AADD4"
                          VerticalOptions="End"
-                         HeightRequest="60"
+                         HeightRequest="50"
                          Padding="10">
                 <Label Text="Tổng tiền: "
                        FontSize="Medium"
