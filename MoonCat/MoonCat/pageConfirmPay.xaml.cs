@@ -32,5 +32,15 @@ namespace MoonCat
                 lbSeat.Text = lbSeat.Text + it.Row + it.Number + " ";
             }
         }
+
+        private void Close_Clicked(object sender, EventArgs e)
+        {
+            var existingPage = Navigation.NavigationStack.ToList();
+            existingPage.RemoveAt(0);
+            foreach(var it in existingPage)
+            {
+                Navigation.RemovePage(it);
+            }
+        }
     }
 }

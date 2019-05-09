@@ -19,8 +19,13 @@ namespace MoonCat
         {
             InitializeComponent();
             this.booking = booking;
+        }
+
+        protected override void OnAppearing()
+        {
             listTime = new Model.ListBeginTimeMovieShowing(this.booking.MovieInfo.ID, this.booking.CinemaInfo.ID);
             lvTime.ItemsSource = listTime.BeginTime;
+            lvTime.IsVisible = true;
         }
 
         private async void LvTime_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -40,15 +45,9 @@ namespace MoonCat
             lvTime.IsVisible = false;
             activityLoading.IsRunning = true;
             activityLoading.IsVisible = true;
-            //
-            //
             await Navigation.PushAsync(new SeatMovieShowingPage(this.booking));
-            await Task.Delay(300);
-            //
-            //
             activityLoading.IsRunning = false;
             activityLoading.IsVisible = false;
-            lvTime.IsVisible = true;
             ((ListView)sender).SelectedItem = null;
         }
     }
