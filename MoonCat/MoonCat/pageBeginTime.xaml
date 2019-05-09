@@ -20,6 +20,11 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <ActivityIndicator x:Name="activityLoading"
+                               IsRunning="False"
+                               IsVisible="False"
+                               HorizontalOptions="Center"
+                               VerticalOptions="CenterAndExpand"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

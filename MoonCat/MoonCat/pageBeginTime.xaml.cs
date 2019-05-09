@@ -37,7 +37,18 @@ namespace MoonCat
                     vm.Time
                 });
             this.booking.TimeInfo = showing[0];
+            lvTime.IsVisible = false;
+            activityLoading.IsRunning = true;
+            activityLoading.IsVisible = true;
+            //
+            //
             await Navigation.PushAsync(new SeatMovieShowingPage(this.booking));
+            await Task.Delay(300);
+            //
+            //
+            activityLoading.IsRunning = false;
+            activityLoading.IsVisible = false;
+            lvTime.IsVisible = true;
             ((ListView)sender).SelectedItem = null;
         }
     }
