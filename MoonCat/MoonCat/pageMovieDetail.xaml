@@ -21,8 +21,7 @@
                     <Button x:Name="btnBookTicket"
                             Text="Đặt vé"
                             VerticalOptions="EndAndExpand"
-                            HorizontalOptions="EndAndExpand"
-                            Clicked="BtnBookTicket_Clicked"/>
+                            HorizontalOptions="EndAndExpand"/>
                 </StackLayout>
             </StackLayout>
             <Label Text="{Binding Detail, StringFormat='Nội dung: {0}'}"/>

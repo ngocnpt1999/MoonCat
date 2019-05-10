@@ -20,5 +20,15 @@ namespace MoonCat.Model
             var list = (from m in movies join s in showing on m.ID equals s.ID_Movie select m).Distinct();
             MoviesShowing = new ObservableCollection<Movie>(list);
         }
+
+        public ListMovieShowing(int id_cinema)
+        {
+            var dbConnection = DependencyService.Get<ISQLiteDatabase>().CreateConnection();
+            var movies = dbConnection.Query<Movie>("SELECT * FROM Movie");
+            var showing = dbConnection.Query<MovieShowing>("SELECT * FROM MovieShowing WHERE id_cinema = ?",
+                                                           new object[1] { id_cinema });
+            var list = (from m in movies join s in showing on m.ID equals s.ID_Movie select m).Distinct();
+            MoviesShowing = new ObservableCollection<Movie>(list);
+        }
     }
 }

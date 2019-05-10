@@ -10,27 +10,24 @@ using Xamarin.Forms.Xaml;
 namespace MoonCat
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MovieShowingPage : ContentPage
+    public partial class MovieShowingAtCinemaPage : ContentPage
     {
-        private Model.ListMovieShowing listMovie = new Model.ListMovieShowing();
+        private Model.BookingInfo booking;
+        private Model.ListMovieShowing listMovie;
 
-        public MovieShowingPage()
+        public MovieShowingAtCinemaPage(Model.BookingInfo booking)
         {
             InitializeComponent();
-            lvMovieShowing.ItemsSource = listMovie.MoviesShowing;
+            this.booking = booking;
+            listMovie = new Model.ListMovieShowing(this.booking.CinemaInfo.ID);
+            lvMovieShowing.ItemsSource = this.listMovie.MoviesShowing;
         }
 
         private async void LvMovieShowing_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            if (((ListView)sender).SelectedItem as Model.Movie == null)
-            {
-                return;
-            }
-
             var vm = ((ListView)sender).SelectedItem as Model.Movie;
-            Model.BookingInfo booking = new Model.BookingInfo() { MovieInfo = vm };
+            this.booking.MovieInfo = vm;
             await Navigation.PushAsync(new MovieDetailPage(booking, true));
-
             ((ListView)sender).SelectedItem = null;
         }
     }

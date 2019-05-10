@@ -15,7 +15,7 @@ namespace MoonCat
     {
         private ObservableCollection<MasterMainMenuItem> items = new ObservableCollection<MasterMainMenuItem>()
         {
-            new MasterMainMenuItem(){Title="Đặt vé theo phim",TargetType=typeof(MovieShowingPage)},
+            new MasterMainMenuItem(){Title="Đặt vé theo phim",TargetType=typeof(BookTicketFollowMoviePage)},
             new MasterMainMenuItem(){Title="Đặt vé theo rạp",TargetType=typeof(BookTicketFollowCinemaPage)}
         };
 

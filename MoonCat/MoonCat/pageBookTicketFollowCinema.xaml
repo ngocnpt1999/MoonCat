@@ -4,9 +4,23 @@
              x:Class="MoonCat.BookTicketFollowCinemaPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="lvCinema"
+                      HasUnevenRows="True"
+                      VerticalOptions="Fill"
+                      ItemTapped="LvCinema_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="50">
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Name}"
+                                       FontSize="Medium"
+                                       TextColor="Red"
+                                       FontAttributes="Bold"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -12,24 +12,37 @@ namespace MoonCat
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MovieDetailPage : ContentPage
     {
-        private Model.Movie chosenMovie;
-        public MovieDetailPage(Model.Movie movie, bool active)
+        private Model.BookingInfo booking;
+
+        public MovieDetailPage(Model.BookingInfo booking, bool active)
         {
             InitializeComponent();
-            this.chosenMovie = movie;
-            BindingContext = chosenMovie;
+            this.booking = booking;
+            BindingContext = this.booking.MovieInfo;
             btnBookTicket.IsVisible = active;
+            if (this.booking.CinemaInfo == null)
+            {
+                btnBookTicket.Clicked += BtnBookTicket_Clicked;
+            }
+            else
+            {
+                btnBookTicket.Clicked += BtnBookTicket_Clicked_1;
+            }
+        }
+
+        private async void BtnBookTicket_Clicked_1(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new BeginTimePage(this.booking));
         }
 
         private async void BtnBookTicket_Clicked(object sender, EventArgs e)
         {
-            Model.BookingInfo booking = new Model.BookingInfo() { MovieInfo = this.chosenMovie };
-            await Navigation.PushAsync(new ChooseCinemaPage(booking));
+            await Navigation.PushAsync(new ChooseCinemaPage(this.booking));
         }
 
         private async void WatchTrailer_Tapped(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new TrailerWebViewPage(this.chosenMovie.TrailerURL));
+            await Navigation.PushAsync(new TrailerWebViewPage(this.booking.MovieInfo.TrailerURL));
         }
     }
 }
