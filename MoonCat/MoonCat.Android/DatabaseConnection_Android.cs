@@ -21,7 +21,7 @@ namespace MoonCat.Droid
     {
         public string localDBPath()
         {
-            string dbName = "dbBookMovieTicket.db";
+            string dbName = "BookMovieTicket.db";
             string documentsDirectoryPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             var path = Path.Combine(documentsDirectoryPath, dbName);
             return path;
@@ -38,7 +38,7 @@ namespace MoonCat.Droid
             string path = localDBPath();
             if (!File.Exists(path))
             {
-                using (var br = new BinaryReader(Android.App.Application.Context.Assets.Open("dbBookMovieTicket.db")))
+                using (var br = new BinaryReader(Android.App.Application.Context.Assets.Open("BookMovieTicket.db")))
                 {
                     using (var bw = new BinaryWriter(new FileStream(path, FileMode.Create)))
                     {
