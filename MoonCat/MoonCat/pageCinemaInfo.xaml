@@ -29,7 +29,7 @@
                            FontAttributes="Bold"
                            WidthRequest="120"/>
                     <Label Text="{Binding Address}"/>
-                    <Image Source="mapmarker.jpg"
+                    <Image Source="mapmarker.png"
                            HeightRequest="20"
                            WidthRequest="20"
                            HorizontalOptions="End"

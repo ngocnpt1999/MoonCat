@@ -12,7 +12,7 @@
                              HorizontalOptions="Fill"
                              VerticalOptions="Fill">
                     <Image x:Name="ibtnUser"
-                           Source="user2.jpg"
+                           Source="user2.png"
                            Aspect="Fill"
                            HorizontalOptions="Center"
                            VerticalOptions="CenterAndExpand"
@@ -49,7 +49,7 @@
                     </Grid.RowDefinitions>
                     <StackLayout Grid.Column="0" Grid.Row="0">
                         <Image x:Name="ibtnHome"
-                               Source="home.jpg"
+                               Source="home.png"
                                HeightRequest="25"
                                WidthRequest="25">
                             <Image.GestureRecognizers>
@@ -63,7 +63,7 @@
                     
                     <StackLayout Grid.Column="1" Grid.Row="0">
                         <Image x:Name="ibtnMember"
-                               Source="user1.jpg"
+                               Source="user1.png"
                                HeightRequest="25"
                                WidthRequest="25">
                             <Image.GestureRecognizers>
@@ -77,7 +77,7 @@
                     
                     <StackLayout Grid.Column="0" Grid.Row="1">
                         <Image x:Name="ibtnGift"
-                               Source="gift.jpg"
+                               Source="gift.png"
                                HeightRequest="25"
                                WidthRequest="25">
                             <Image.GestureRecognizers>
@@ -91,7 +91,7 @@
                     
                     <StackLayout Grid.Column="1" Grid.Row="1">
                         <Image x:Name="ibtnCinemaReview"
-                               Source="info.jpg"
+                               Source="info.png"
                                HeightRequest="25"
                                WidthRequest="25">
                             <Image.GestureRecognizers>
