@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 namespace MoonCat
 {
 
-    public class MasterMainMenuItem
+    public class MenuItem
     {
-        public string Image { get; set; }
-
         public string Title { get; set; }
 
         public Type TargetType { get; set; }

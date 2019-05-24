@@ -21,6 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="pageMethodPayment.xaml.cs">
+      <DependentUpon>pageMethodPayment.xaml</DependentUpon>
+    </Compile>
     <Compile Update="pageMovieShowingAtCinema.xaml.cs">
       <DependentUpon>pageMovieShowingAtCinema.xaml</DependentUpon>
     </Compile>
@@ -67,6 +70,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="pageMethodPayment.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="pageMovieShowingAtCinema.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

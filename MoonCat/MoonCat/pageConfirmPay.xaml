@@ -50,9 +50,11 @@
                 <Button Text="Hủy"
                         Grid.Column="0"
                         Grid.Row="0"/>
-                <Button Text="Xác nhận"
+                <Button x:Name="btnConfirm"
+                        Text="Xác nhận"
                         Grid.Column="1"
-                        Grid.Row="0"/>
+                        Grid.Row="0"
+                        Clicked="BtnConfirm_Clicked"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

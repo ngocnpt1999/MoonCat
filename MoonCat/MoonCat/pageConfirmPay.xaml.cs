@@ -42,5 +42,10 @@ namespace MoonCat
                 Navigation.RemovePage(it);
             }
         }
+
+        private async void BtnConfirm_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MethodPaymentPage());
+        }
     }
 }

@@ -13,10 +13,10 @@ namespace MoonCat
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MasterMainPage : MasterDetailPage
     {
-        private ObservableCollection<MasterMainMenuItem> items = new ObservableCollection<MasterMainMenuItem>()
+        private ObservableCollection<MenuItem> items = new ObservableCollection<MenuItem>()
         {
-            new MasterMainMenuItem(){Title="Đặt vé theo phim",TargetType=typeof(BookTicketFollowMoviePage)},
-            new MasterMainMenuItem(){Title="Đặt vé theo rạp",TargetType=typeof(BookTicketFollowCinemaPage)}
+            new MenuItem(){Title="Đặt vé theo phim",TargetType=typeof(BookTicketFollowMoviePage)},
+            new MenuItem(){Title="Đặt vé theo rạp",TargetType=typeof(BookTicketFollowCinemaPage)}
         };
 
         public MasterMainPage()
@@ -55,7 +55,7 @@ namespace MoonCat
 
         private void lvItems_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var item = e.SelectedItem as MasterMainMenuItem;
+            var item = e.SelectedItem as MenuItem;
             if (item == null)
                 return;
 
