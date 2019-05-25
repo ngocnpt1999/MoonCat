@@ -11,14 +11,21 @@
             <ListView x:Name="lvMethod"
                       HasUnevenRows="True"
                       VerticalOptions="FillAndExpand"
-                      ItemSelected="LvMethod_ItemSelected">
+                      ItemTapped="LvMethod_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <Label Text="{Binding Title}"
-                                   FontSize="Medium"
-                                   VerticalTextAlignment="Center"
-                                   HeightRequest="50"/>
+                        <ViewCell Height="55">
+                            <StackLayout Orientation="Horizontal"
+                                         Padding="10">
+                                <Image Source="{Binding Image}"
+                                       HeightRequest="25"
+                                       WidthRequest="25"
+                                       Aspect="Fill"
+                                       VerticalOptions="Center"/>
+                                <Label Text="{Binding Title}"
+                                       FontSize="Medium"
+                                       VerticalTextAlignment="Center"/>
+                            </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

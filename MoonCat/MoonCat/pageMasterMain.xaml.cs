@@ -53,9 +53,9 @@ namespace MoonCat
             IsPresented = false;
         }
 
-        private void lvItems_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private void LvItems_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            var item = e.SelectedItem as MenuItem;
+            var item = ((ListView)sender).SelectedItem as MenuItem;
             if (item == null)
                 return;
 
@@ -65,7 +65,7 @@ namespace MoonCat
             Detail = new NavigationPage(page);
             IsPresented = false;
 
-            lvItems.SelectedItem = null;
+            ((ListView)sender).SelectedItem = null;
         }
     }
 }

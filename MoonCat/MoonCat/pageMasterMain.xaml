@@ -27,7 +27,7 @@
                 <ListView x:Name="lvItems"
                           HasUnevenRows="True"
                           VerticalOptions="Fill"
-                          ItemSelected="lvItems_ItemSelected">
+                          ItemTapped="LvItems_ItemTapped">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell Height="50">

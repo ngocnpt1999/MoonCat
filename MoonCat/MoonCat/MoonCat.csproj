@@ -21,6 +21,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="pageE-Banking.xaml.cs">
+      <DependentUpon>pageE-Banking.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="pageCreditCard.xaml.cs">
+      <DependentUpon>pageCreditCard.xaml</DependentUpon>
+    </Compile>
     <Compile Update="pageMethodPayment.xaml.cs">
       <DependentUpon>pageMethodPayment.xaml</DependentUpon>
     </Compile>
@@ -70,6 +76,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="pageE-Banking.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="pageCreditCard.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="pageMethodPayment.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

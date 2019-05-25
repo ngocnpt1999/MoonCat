@@ -15,9 +15,9 @@ namespace MoonCat
     {
         private ObservableCollection<MenuItem> methods = new ObservableCollection<MenuItem>()
         {
-            new MenuItem(){Title="Visa/MasterCard"},
-            new MenuItem(){Title="Thẻ ngân hàng"},
-            new MenuItem(){Title="Ví MoMo"}
+            new MenuItem(){Title="Visa/MasterCard", Image="card.png", TargetType=typeof(CreditCardPage)},
+            new MenuItem(){Title="Thẻ ngân hàng", Image="bank.png", TargetType=typeof(E_BankingPage)},
+            new MenuItem(){Title="Ví MoMo", Image="wallet.png"}
         };
 
         public MethodPaymentPage()
@@ -26,9 +26,15 @@ namespace MoonCat
             lvMethod.ItemsSource = methods;
         }
 
-        private void LvMethod_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void LvMethod_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-
+            var vm = ((ListView)sender).SelectedItem as MenuItem;
+            if (vm.TargetType != null)
+            {
+                var page = (Page)Activator.CreateInstance(vm.TargetType);
+                await Navigation.PushAsync(page);
+            }
+            ((ListView)sender).SelectedItem = null;
         }
     }
 }
