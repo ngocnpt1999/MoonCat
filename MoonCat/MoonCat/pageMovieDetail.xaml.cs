@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace MoonCat
 {
@@ -42,7 +43,7 @@ namespace MoonCat
 
         private async void WatchTrailer_Tapped(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new TrailerWebViewPage(this.booking.MovieInfo.TrailerURL));
+            await Browser.OpenAsync(this.booking.MovieInfo.TrailerURL, BrowserLaunchMode.SystemPreferred);
         }
     }
 }

@@ -70,9 +70,6 @@
       <DependentUpon>pageBookTicketFollowCinema.xaml</DependentUpon>
     </Compile>
     <Compile Update="MasterMainMenuItem.cs" />
-    <Compile Update="pageTrailerWebView.xaml.cs">
-      <DependentUpon>pageTrailerWebView.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -122,9 +119,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="pageBookTicketFollowCinema.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="pageTrailerWebView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

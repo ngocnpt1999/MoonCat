@@ -25,9 +25,10 @@
                 </StackLayout>
             </StackLayout>
             <Label Text="{Binding Detail, StringFormat='Nội dung: {0}'}"/>
-            <Label Text="Trailer"
+            <Label Text="Xem Trailer"
                    TextColor="Blue"
-                   FontSize="Medium">
+                   FontSize="Medium"
+                   TextDecorations="Underline">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="WatchTrailer_Tapped"/>
                 </Label.GestureRecognizers>

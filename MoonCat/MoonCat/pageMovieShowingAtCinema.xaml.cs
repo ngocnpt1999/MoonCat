@@ -27,7 +27,9 @@ namespace MoonCat
         {
             var vm = ((ListView)sender).SelectedItem as Model.Movie;
             this.booking.MovieInfo = vm;
-            await Navigation.PushAsync(new MovieDetailPage(booking, true));
+            Page page = new MovieDetailPage(booking, true);
+            page.Title = vm.Name;
+            await Navigation.PushAsync(page);
             ((ListView)sender).SelectedItem = null;
         }
     }
