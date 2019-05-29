@@ -17,7 +17,7 @@ namespace MoonCat
         {
             new MenuItem(){Title="Visa/MasterCard", Image="card.png", TargetType=typeof(CreditCardPage)},
             new MenuItem(){Title="Thẻ ngân hàng", Image="bank.png", TargetType=typeof(E_BankingPage)},
-            new MenuItem(){Title="Ví MoMo", Image="wallet.png"}
+            new MenuItem(){Title="Ví MoMo", Image="momo.png", TargetType=typeof(MoMoWallet)}
         };
 
         public MethodPaymentPage()
@@ -31,8 +31,16 @@ namespace MoonCat
             var vm = ((ListView)sender).SelectedItem as MenuItem;
             if (vm.TargetType != null)
             {
-                var page = (Page)Activator.CreateInstance(vm.TargetType);
-                await Navigation.PushAsync(page);
+                if (vm.TargetType == typeof(MoMoWallet))
+                {
+                    var momo = (MoMoWallet)Activator.CreateInstance(vm.TargetType);
+                    momo.OpenMoMoWallet();
+                }
+                else
+                {
+                    var page = (Page)Activator.CreateInstance(vm.TargetType);
+                    await Navigation.PushAsync(page);
+                }
             }
             ((ListView)sender).SelectedItem = null;
         }

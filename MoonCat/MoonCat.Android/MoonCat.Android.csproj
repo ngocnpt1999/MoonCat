@@ -143,7 +143,7 @@
     <AndroidResource Include="Resources\drawable\card.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\wallet.png" />
+    <AndroidResource Include="Resources\drawable\momo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
