@@ -1,14 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MoonCat.CinemaInfoPage"
-             xmlns:view="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView">
+             x:Class="MoonCat.CinemaInfoPage">
     <ContentPage.Content>
         <StackLayout>
-            <view:CarouselView ItemsSource="{Binding Images}"
+            <CarouselView ItemsSource="{Binding Images}"
                                VerticalOptions="Fill"
                                HeightRequest="200">
-                <view:CarouselView.ItemTemplate>
+                <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
                             <Image Source="{Binding SourceURL}"
@@ -17,8 +16,8 @@
                                    Aspect="Fill"/>
                         </StackLayout>
                     </DataTemplate>
-                </view:CarouselView.ItemTemplate>
-            </view:CarouselView>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
             <StackLayout Padding="10"
                          Spacing="10">
                 <Label Text="{Binding Name}"

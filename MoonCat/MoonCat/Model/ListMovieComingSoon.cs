@@ -19,8 +19,8 @@ namespace MoonCat.Model
             DateTime begin = new DateTime(2019, 4, 27);
             DateTime end = new DateTime(2019, 5, 31);
             var list = (from m in movies
-                        where Convert.ToDateTime(m.Premiere) >= begin
-                        && Convert.ToDateTime(m.Premiere) <= end
+                        where Convert.ToDateTime(m.Premiere, System.Globalization.CultureInfo.GetCultureInfo("hi-IN").DateTimeFormat) >= begin
+                        && Convert.ToDateTime(m.Premiere, System.Globalization.CultureInfo.GetCultureInfo("hi-IN").DateTimeFormat) <= end
                         select m);
             MoviesComingSoon = new ObservableCollection<Movie>(list);
         }
