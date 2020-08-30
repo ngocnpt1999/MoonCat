@@ -14,111 +14,121 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
-    <PackageReference Include="Xamarin.Forms" Version="4.5.0.356" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.5.0" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
+    <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1269" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="pageE-Banking.xaml.cs">
-      <DependentUpon>pageE-Banking.xaml</DependentUpon>
+    <Compile Update="View\E-BankingPage.xaml.cs">
+      <DependentUpon>E-BankingPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="pageCreditCard.xaml.cs">
-      <DependentUpon>pageCreditCard.xaml</DependentUpon>
+    <Compile Update="View\CreditCardPage.xaml.cs">
+      <DependentUpon>CreditCardPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="pageMethodPayment.xaml.cs">
-      <DependentUpon>pageMethodPayment.xaml</DependentUpon>
+    <Compile Update="View\MasterMainPage.xaml.cs">
+      <DependentUpon>MasterMainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="pageMovieShowingAtCinema.xaml.cs">
-      <DependentUpon>pageMovieShowingAtCinema.xaml</DependentUpon>
+    <Compile Update="View\MethodPaymentPage.xaml.cs">
+      <DependentUpon>MethodPaymentPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="pageBookTicketFollowMovie.xaml.cs">
-      <DependentUpon>pageBookTicketFollowMovie.xaml</DependentUpon>
+    <Compile Update="View\MovieShowingAtCinemaPage.xaml.cs">
+      <DependentUpon>MovieShowingAtCinemaPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="pageConfirmPay.xaml.cs">
-      <DependentUpon>pageConfirmPay.xaml</DependentUpon>
+    <Compile Update="View\BookTicketFollowMoviePage.xaml.cs">
+      <DependentUpon>BookTicketFollowMoviePage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="pageSeatMovieShowing.xaml.cs">
-      <DependentUpon>pageSeatMovieShowing.xaml</DependentUpon>
+    <Compile Update="View\ConfirmPayPage.xaml.cs">
+      <DependentUpon>ConfirmPayPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="pageCinemaInfo.xaml.cs">
-      <DependentUpon>pageCinemaInfo.xaml</DependentUpon>
+    <Compile Update="View\SeatMovieShowingPage.xaml.cs">
+      <DependentUpon>SeatMovieShowingPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="pageAllCinema.xaml.cs">
-      <DependentUpon>pageAllCinema.xaml</DependentUpon>
+    <Compile Update="View\CinemaInfoPage.xaml.cs">
+      <DependentUpon>CinemaInfoPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="pageBeginTime.xaml.cs">
-      <DependentUpon>pageBeginTime.xaml</DependentUpon>
+    <Compile Update="View\AllCinemaPage.xaml.cs">
+      <DependentUpon>AllCinemaPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="pageChooseCinema.xaml.cs">
-      <DependentUpon>pageChooseCinema.xaml</DependentUpon>
+    <Compile Update="View\BeginTimePage.xaml.cs">
+      <DependentUpon>BeginTimePage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="pageMovieDetail.xaml.cs">
-      <DependentUpon>pageMovieDetail.xaml</DependentUpon>
+    <Compile Update="View\ChooseCinemaPage.xaml.cs">
+      <DependentUpon>ChooseCinemaPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="pageMovieComingSoon.xaml.cs">
-      <DependentUpon>pageMovieComingSoon.xaml</DependentUpon>
+    <Compile Update="View\MovieDetailPage.xaml.cs">
+      <DependentUpon>MovieDetailPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="pageMovieShowing.xaml.cs">
-      <DependentUpon>pageMovieShowing.xaml</DependentUpon>
+    <Compile Update="View\MovieComingSoonPage.xaml.cs">
+      <DependentUpon>MovieComingSoonPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="pageHomeTabbed.xaml.cs">
-      <DependentUpon>pageHomeTabbed.xaml</DependentUpon>
+    <Compile Update="View\MovieShowingPage.xaml.cs">
+      <DependentUpon>MovieShowingPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="pageBookTicketFollowCinema.xaml.cs">
-      <DependentUpon>pageBookTicketFollowCinema.xaml</DependentUpon>
+    <Compile Update="View\HomeTabbedPage.xaml.cs">
+      <DependentUpon>HomeTabbedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="View\BookTicketFollowCinemaPage.xaml.cs">
+      <DependentUpon>BookTicketFollowCinemaPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="MasterMainMenuItem.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="pageE-Banking.xaml">
+    <EmbeddedResource Update="View\E-BankingPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="pageCreditCard.xaml">
+    <EmbeddedResource Update="View\CreditCardPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="pageMethodPayment.xaml">
+    <EmbeddedResource Update="View\MethodPaymentPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="pageMovieShowingAtCinema.xaml">
+    <EmbeddedResource Update="View\MovieShowingAtCinemaPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="pageBookTicketFollowMovie.xaml">
+    <EmbeddedResource Update="View\BookTicketFollowMoviePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="pageConfirmPay.xaml">
+    <EmbeddedResource Update="View\ConfirmPayPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="pageSeatMovieShowing.xaml">
+    <EmbeddedResource Update="View\SeatMovieShowingPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="pageCinemaInfo.xaml">
+    <EmbeddedResource Update="View\CinemaInfoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="pageAllCinema.xaml">
+    <EmbeddedResource Update="View\AllCinemaPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="pageBeginTime.xaml">
+    <EmbeddedResource Update="View\BeginTimePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="pageChooseCinema.xaml">
+    <EmbeddedResource Update="View\ChooseCinemaPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="pageMovieDetail.xaml">
+    <EmbeddedResource Update="View\MovieDetailPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="pageMovieComingSoon.xaml">
+    <EmbeddedResource Update="View\MovieComingSoonPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="pageMovieShowing.xaml">
+    <EmbeddedResource Update="View\MovieShowingPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="pageHomeTabbed.xaml">
+    <EmbeddedResource Update="View\HomeTabbedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="pageBookTicketFollowCinema.xaml">
+    <EmbeddedResource Update="View\BookTicketFollowCinemaPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewModel\" />
   </ItemGroup>
 </Project>

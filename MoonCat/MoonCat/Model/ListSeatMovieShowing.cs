@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
 using System.Collections.ObjectModel;
+using MoonCat.Interface;
 
 namespace MoonCat.Model
 {

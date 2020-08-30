@@ -4,8 +4,18 @@ using System.Text;
 
 namespace MoonCat.Model
 {
-    public class Timer
+    public class Timer : BaseModel
     {
-        public string Time { get; set; }
+        private string time;
+
+        public string Time
+        {
+            get => time;
+            set
+            {
+                time = value;
+                OnPropertyChanged();
+            }
+        }
     }
 }

@@ -4,6 +4,7 @@ using System.Text;
 using System.Collections.ObjectModel;
 using SQLite;
 using Xamarin.Forms;
+using MoonCat.Interface;
 
 namespace MoonCat.Model
 {

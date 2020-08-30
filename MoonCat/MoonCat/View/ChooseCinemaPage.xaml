@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MoonCat.View.ChooseCinemaPage"
+             Title="Chọn rạp">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="lvChooseCinema"
+                      HasUnevenRows="True"
+                      VerticalOptions="Fill"
+                      ItemTapped="LvChooseCinema_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="50">
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Name}"
+                                       FontSize="Medium"
+                                       TextColor="Red"
+                                       FontAttributes="Bold"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

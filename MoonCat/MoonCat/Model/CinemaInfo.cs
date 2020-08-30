@@ -8,6 +8,15 @@ namespace MoonCat.Model
 {
     public class CinemaInfo : Cinema
     {
-        public ObservableCollection<ImageCinema> Images { get; set; }
+        private ObservableCollection<ImageCinema> images;
+        public ObservableCollection<ImageCinema> Images
+        {
+            get => images;
+            set
+            {
+                images = value;
+                OnPropertyChanged();
+            }
+        }
     }
 }

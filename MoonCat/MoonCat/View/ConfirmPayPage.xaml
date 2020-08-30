@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MoonCat.View.ConfirmPayPage"
+             NavigationPage.HasBackButton="False">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="close.png"
+                     Clicked="Close_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <StackLayout x:Name="slMovieInfo"
+                         Orientation="Horizontal">
+                <Image Source="{Binding Image}"
+                       Aspect="Fill"
+                       HeightRequest="200"
+                       WidthRequest="150"/>
+                <StackLayout>
+                    <Label Text="{Binding Name}"
+                           TextColor="Purple"
+                           FontAttributes="Bold"
+                           FontSize="Large"/>
+                    <Label Text="{Binding Producer, StringFormat='Nhà sản xuất: {0}'}"/>
+                    <Label Text="{Binding Director, StringFormat='Đạo diễn: {0}'}"/>
+                    <Label Text="{Binding Duration, StringFormat='Thời lượng: {0} phút'}"/>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout x:Name="slCinemaInfo">
+                <Label Text="{Binding Name, StringFormat='Rạp: {0}'}"
+                       FontSize="Medium"/>
+            </StackLayout>
+            <StackLayout x:Name="slTime">
+                <Label Text="{Binding Date, StringFormat='Thời gian: {0}'}"
+                       FontSize="Medium"/>
+                <Label Text="{Binding Begin, StringFormat='Suất chiếu: {0}'}"
+                       FontSize="Medium"/>
+            </StackLayout>
+            <Label x:Name="lbSeat"
+                   Text="Hàng ghế: "
+                   FontSize="Medium"/>
+            <Label x:Name="lbTotal"
+                   FontSize="Medium"/>
+            <Grid VerticalOptions="EndAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Button Text="Hủy"
+                        Grid.Column="0"
+                        Grid.Row="0"/>
+                <Button x:Name="btnConfirm"
+                        Text="Xác nhận"
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        Clicked="BtnConfirm_Clicked"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MoonCat.View.MovieShowingPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Phim đang chiếu">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView
+                x:Name="lvMovieShowing"
+                HasUnevenRows="True"
+                ItemTapped="LvMovieShowing_ItemTapped"
+                VerticalOptions="Fill">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Image
+                                    Aspect="Fill"
+                                    HeightRequest="150"
+                                    Source="{Binding Image}"
+                                    WidthRequest="100" />
+                                <StackLayout Padding="5">
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="Medium"
+                                        Text="{Binding Name}"
+                                        TextColor="Red" />
+                                    <Label Text="{Binding Premiere, StringFormat='Ngày khởi chiếu: {0}'}" />
+                                    <Label Text="{Binding Duration, StringFormat='Thời lượng: {0} phút'}" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

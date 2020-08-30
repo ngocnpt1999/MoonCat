@@ -1,6 +1,8 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using MoonCat.Interface;
+using MoonCat.View;
 
 namespace MoonCat
 {
@@ -10,6 +12,7 @@ namespace MoonCat
         {
             InitializeComponent();
 
+            Device.SetFlags(new string[] { "CarouselView_Experimental" });
             DependencyService.Get<ISQLiteDatabase>().CopyDatabaseIfNotExists();
 
             MainPage = new MasterMainPage();

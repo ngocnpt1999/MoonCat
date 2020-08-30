@@ -13,6 +13,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Xamarin.Forms;
+using MoonCat.Interface;
 
 [assembly: Dependency(typeof(DatabaseConnection_Android))]
 namespace MoonCat.Droid

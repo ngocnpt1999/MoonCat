@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MoonCat.View.CinemaInfoPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <CarouselView ItemsSource="{Binding Images}"
+                               VerticalOptions="Fill"
+                               HeightRequest="200">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Image Source="{Binding SourceURL}"
+                                   VerticalOptions="Fill"
+                                   HorizontalOptions="Fill"
+                                   Aspect="Fill"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            <StackLayout Padding="10"
+                         Spacing="10">
+                <Label Text="{Binding Name}"
+                       FontSize="Medium"
+                       FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Địa chỉ:"
+                           FontAttributes="Bold"
+                           WidthRequest="120"/>
+                    <Label Text="{Binding Address}"/>
+                    <Image Source="mapmarker.png"
+                           HeightRequest="20"
+                           WidthRequest="20"
+                           HorizontalOptions="End"
+                           VerticalOptions="Center"
+                           Aspect="Fill">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="MapMarker_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Số điện thoại:"
+                           FontAttributes="Bold"/>
+                    <Label Text="{Binding Phone}"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
